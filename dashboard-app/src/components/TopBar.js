@@ -19,7 +19,7 @@ const TopBar = () => {
           placeholder="Search anything"
         />
          </div>
-        <div className="icon-container">
+        <div className="icon-container1">
           <FaChevronDown className="dropdown-icon" />
           <FaBell className="bell-icon" />
           <FaUser className="user-icon" />
