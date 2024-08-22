@@ -1,0 +1,71 @@
+.card {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 650px; /* Adjust the max-width as needed */
+    box-sizing: border-box;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .content-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space between chart and squares */
+  }
+  
+  .chart-container {
+    flex: 1;
+    margin-right: 60px; /* Space between the chart and squares */
+  }
+  
+  .square-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    gap: 10px; /* Space between each item */
+    margin-top: 45px;
+  }
+  
+  .square {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between the square box and the text */
+  }
+  
+  .square-box {
+    width: 20px; /* Width of the colored square */
+    height: 20px; /* Height of the colored square */
+    display: inline-block; /* Ensure the box stays inline with the text */
+  }
+  
+  .square.red .square-box {
+    background-color: #f44336; /* Red */
+  }
+  
+  .square.yellow .square-box {
+    background-color: #ffeb3b; /* Yellow */
+  }
+  
+  .square.light-gray .square-box {
+    background-color: #f5f5f5; /* Light Gray */
+  }
+  
+  .square.green .square-box {
+    background-color: #4caf50; /* Green */
+  }
+  
+  .square-text {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+  }
+  

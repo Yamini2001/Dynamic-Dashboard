@@ -1,0 +1,64 @@
+.card {
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    box-sizing: border-box;
+  }
+.card-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width:600px;
+  }
+  
+  .main-card {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    text-align: center;
+    margin-top:60px;
+  }
+  
+  .add-widget-button {
+    background-color: white; /* Bootstrap primary color */
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .add-widget-button:hover {
+    background-color: rgb(171, 166, 166); /* Darker blue for hover effect */
+  }
+  
+  .additional-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  .additional-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e6ea;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between additional cards */
+    width: 100%;
+    max-width: 580px; /* Adjust as needed */
+  }
+  

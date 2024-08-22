@@ -1,0 +1,123 @@
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: none;
+    background-color: #f5f5f5;
+  }
+  
+  .left-side .dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between buttons as needed */
+  }
+  
+  .add-widget-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(234, 226, 226); /* Add a light gray border */
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px; /* Add some margin to separate it from the other elements */
+  }
+  
+  .add-widget-icon {
+    margin-left: 12px; /* Increase margin to create more space between the icon and text */
+    font-size: 20px;
+  }
+  
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    padding: 8px;
+    border-radius: 30%; /* Make the button circular */
+    cursor: pointer;
+  }
+  
+  .reset-icon-btn {
+    border-color: #dcdcdc;
+  }
+  
+  .reset-icon {
+    color: black;
+    font-size: 16px; /* Adjust the size of the icon */
+  }
+  
+  .ellipsis-icon {
+    color: black;
+  }
+  
+  .time-range-btn {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* Make sure the separator line stays within the button */
+  }
+  
+  .clock-icon {
+    color: navy;
+    margin-right: 10px;
+  }
+  
+  .separator-line {
+    height: 20px; /* Ensure the line touches both top and bottom of the button */
+    width: 1px;
+    background-color: #dcdcdc;
+    margin: 0 10px; /* Keep margin to separate the line from the icon and text */
+  }
+  
+  .time-range-text {
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .dropdown-icon {
+    color: gray;
+  }
+  .executive-dashboard-header {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 15px;
+    border-bottom: none; /* Optional: adds a border for separation */
+  }
+  
+  .executive-dashboard-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards as needed */
+  }
+  .cw-dashboard{
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 15px;
+    border-bottom: none; /* Optional: adds a border for separation */
+  }
+  .cw-dashboard h3{
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }

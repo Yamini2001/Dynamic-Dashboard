@@ -1,0 +1,57 @@
+.card {
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 600px; /* Increased width for better layout */
+    box-sizing: border-box;
+    height: auto; /* Adjust height dynamically based on content */
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .chart-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Space out items horizontally */
+  }
+  
+  .pie-chart {
+    flex: 2; /* Allow more space for the pie chart */
+    display: flex;
+    align-items: center; /* Center the chart vertically */
+  }
+  
+  .legend {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Space between the pie chart and legend */
+    align-items: flex-start; /* Align items at the start */
+    margin-top: 60px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between legend items */
+  }
+  
+  .legend-color {
+    width: 20px; /* Width of the colored square */
+    height: 20px; /* Height of the colored square */
+    margin-right: 10px; /* Space between color square and text */
+  }
+  
+  .legend-text {
+    font-size: 14px;
+    color: #333;
+  }
+  

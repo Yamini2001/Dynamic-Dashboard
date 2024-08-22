@@ -1,0 +1,39 @@
+/* Alert.css */
+.alert-card {
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .alert-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; /* Space between icon and text */
+  }
+  
+  .chart-icon {
+    font-size: 40px; /* Adjust icon size as needed */
+    color: #333;
+  }
+  
+  .no-data-text {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+  }
+  
