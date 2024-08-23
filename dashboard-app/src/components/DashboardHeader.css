@@ -1,124 +1,127 @@
+/* Styles for the dashboard header */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-bottom: none;
-  background-color: #f5f5f5;
+  padding: 10px 20px;
+  background-color: #f8f9fa; /* Light background color */
+  border-bottom: 1px solid #dee2e6; /* Subtle border at the bottom */
 }
 
 .left-side .dashboard-title {
   font-size: 24px;
   font-weight: bold;
   color: #333;
-  margin: 0;
 }
 
 .right-side {
   display: flex;
   align-items: center;
-  gap: 20px; /* Adjust spacing between buttons as needed */
+  gap: 10px; /* Space between icons/buttons */
 }
 
 .add-widget-btn {
   display: flex;
   align-items: center;
-  background-color: white;
-  color: black;
-  border: 1px solid rgb(234, 226, 226); /* Add a light gray border */
-  padding: 6px 15px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  background-color: #007bff; /* Primary button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  margin-right: 10px; /* Add some margin to separate it from the other elements */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-widget-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
 .add-widget-icon {
-  margin-left: 12px; /* Increase margin to create more space between the icon and text */
-  font-size: 20px;
+  margin-left: 8px;
 }
 
 .icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border: 1px solid #dcdcdc;
-  padding: 8px;
-  border-radius: 30%; /* Make the button circular */
+  background: none;
+  border: none;
+  color: #333;
   cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #007bff; /* Primary color on hover */
 }
 
 .reset-icon-btn {
-  border-color: #dcdcdc;
-}
-
-.reset-icon {
-  color: black;
-  font-size: 16px; /* Adjust the size of the icon */
-}
-
-.ellipsis-icon {
-  color: black;
+  margin-right: 10px;
 }
 
 .time-range-btn {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #dcdcdc;
-  padding: 5px 15px;
-  border-radius: 5px;
+  background: #e9ecef; /* Light background */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  position: relative; /* Make sure the separator line stays within the button */
-}
-
-.clock-icon {
-  color: navy;
-  margin-right: 10px;
-}
-
-.separator-line {
-  height: 20px; /* Ensure the line touches both top and bottom of the button */
-  width: 1px;
-  background-color: #dcdcdc;
-  margin: 0 10px; /* Keep margin to separate the line from the icon and text */
-}
-
-.time-range-text {
-  margin-right: 10px;
+  font-size: 16px;
   color: #333;
+}
+
+.time-range-btn .separator-line {
+  margin: 0 5px;
+  height: 16px;
+  border-left: 1px solid #333;
 }
 
 .dropdown-icon {
-  color: gray;
-}
-.executive-dashboard-header {
-  background-color: #f5f5f5; /* Light gray background */
-  padding: 15px;
-  border-bottom: none; /* Optional: adds a border for separation */
+  margin-left: 5px;
 }
 
-.executive-dashboard-header h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+/* Styles for the app bar/modal */
+.app-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Ensure it's on top of other content */
 }
+
+.widget-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px; /* Adjust the width as needed */
+  max-height: 80vh; /* Limit height to viewport height */
+  overflow-y: auto; /* Scroll if content exceeds height */
+}
+
+/* Styles for the content sections */
+.content {
+  padding-top: 60px; /* Adjust based on the height of the header and app bar */
+}
+
+.executive-dashboard-header,
+.cw-dashboard {
+  padding: 20px;
+}
+
+.executive-dashboard-header h3,
+.cw-dashboard h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between cards as needed */
-  min-width:600px;
-}
-.cw-dashboard{
-  background-color: #f5f5f5; /* Light gray background */
-  padding: 15px;
-  border-bottom: none; /* Optional: adds a border for separation */
-}
-.cw-dashboard h3{
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  gap: 20px; /* Space between cards */
 }

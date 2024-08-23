@@ -18,19 +18,19 @@ const DashboardHeader = () => {
   const [cspmWidgets, setCspmWidgets] = useState([
     <PieChartWithCenterLabel key="cloud-accounts" />,
     <RiskAssessmentCard key="risk-assessment" />,
-    <CardList key = "Add Widget" />
+    <CardList key="Add Widget" />
   ]);
 
   const [cwppWidgets, setCwppWidgets] = useState([
     <Alert key="namespace-alerts" />,
     <WorkloadAlerts key="workload-alerts" />,
-    <CardList key = "Add Widget" />
+    <CardList key="Add Widget" />
   ]);
 
   const [imageWidgets, setImageWidgets] = useState([
     <ImageRisk key="image-vulnerability" />,
     <SecurityScan key="security-scan" />, // Replace with the correct component if different
-    <CardList key = "Add Widget" />
+    <CardList key="Add Widget" />
   ]);
 
   const handleOpenModal = () => {
@@ -86,34 +86,40 @@ const DashboardHeader = () => {
           </button>
         </div>
       </div>
-      
-      <div className="executive-dashboard-header">
-        <h3>CSPM Executive Dashboard</h3>
-        <div className="cards-container">
-          {cspmWidgets}
+
+      <div className="content">
+        <div className="executive-dashboard-header">
+          <h3>CSPM Executive Dashboard</h3>
+          <div className="cards-container">
+            {cspmWidgets}
+          </div>
         </div>
-      </div>
-      
-      <div className="cw-dashboard">
-        <h3>CWPP Dashboard:</h3>
-        <div className="cards-container">
-          {cwppWidgets}
+        
+        <div className="cw-dashboard">
+          <h3>CWPP Dashboard:</h3>
+          <div className="cards-container">
+            {cwppWidgets}
+          </div>
         </div>
-      </div>
-      
-      <div className="cw-dashboard">
-        <h3>Register Scan</h3>
-        <div className="cards-container">
-          {imageWidgets}
+        
+        <div className="cw-dashboard">
+          <h3>Register Scan</h3>
+          <div className="cards-container">
+            {imageWidgets}
+          </div>
         </div>
       </div>
 
-      <WidgetModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        onConfirm={handleConfirmWidgets}
-        widgetOptions={widgetOptions}
-      />
+      {isModalOpen && (
+        <div className="app-bar">
+          <WidgetModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            onConfirm={handleConfirmWidgets}
+            widgetOptions={widgetOptions}
+          />
+        </div>
+      )}
     </div>
   );
 };
