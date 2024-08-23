@@ -1,0 +1,119 @@
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 80%; /* Ensure card has enough width */
+    max-width: 800px; /* Optional: cap width to maintain a reasonable size */
+    margin: 0 auto; /* Center the card */
+  }
+  
+  .image-risk {
+    text-align: left;
+  }
+  
+  .image-risk-heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .total-vulnerabilities {
+    margin-bottom: 20px;
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+  
+  .horizontal-line-container {
+    position: absolute;
+    width: 100%; /* Full width of the parent */
+    height: 50px; /* Adjust height as needed */
+    margin: 50px 0; /* Margin for spacing */
+  }
+  
+  .horizontal-line {
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Center content vertically */
+    height: 20px; /* Line height */
+    border-radius: 10px; /* Rounded edges for the line */
+    width: 28%; /* Full width of the container */
+    background-color: #ccc; /* Background color */
+    overflow: hidden; /* No overflow */
+    position: relative; /* Ensure relative positioning for absolute children */
+  }
+  
+  .segment {
+    height: 100%;
+  }
+  
+  .critical {
+    background-color: #8B4513; /* Brown for Critical */
+    flex: 1;
+  }
+  
+  .high {
+    background-color: #f44336; /* Red for High */
+    flex: 2;
+  }
+  
+  .medium {
+    background-color: #FFEB3B; /* Yellow for Medium */
+    flex: 4;
+  }
+  
+  .mild {
+    background-color: #FF9800; /* Orange for Mild */
+    flex: 3;
+  }
+  
+  .low {
+    background-color: #9E9E9E; /* Grey for Low */
+    flex: 2;
+  }
+  
+  .marker {
+    position: absolute; /* Absolute to position markers correctly */
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #000;
+    transform: translateX(-50%); /* Center the marker horizontally */
+    top: 95px; /* Adjust top positioning to ensure markers are above the line */
+  }
+  
+  .color-box {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px; /* Space between box and text */
+    background-color: currentColor; /* Use the marker color */
+    margin-top: 0; /* Reset margin */
+  }
+  
+  .marker.critical {
+    left: 10%; /* Positioning critical marker */
+    color: #8B4513; /* Brown for Critical */
+  }
+  
+  .marker.high {
+    left: 30%; /* Positioning high marker */
+    color: #f44336; /* Red for High */
+  }
+  
+  .marker.medium {
+    left: 50%; /* Positioning medium marker */
+    color: #FFEB3B; /* Yellow for Medium */
+  }
+  
+  .marker.mild {
+    left: 70%; /* Positioning mild marker */
+    color: #FF9800; /* Orange for Mild */
+  }
+  
+  .marker.low {
+    left: 90%; /* Positioning low marker */
+    color: #9E9E9E; /* Grey for Low */
+  }
+  

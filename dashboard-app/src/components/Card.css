@@ -1,57 +1,51 @@
+/* Card.css */
+
 .card {
-    background-color: white;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    max-width: 600px; /* Increased width for better layout */
-    box-sizing: border-box;
-    height: auto; /* Adjust height dynamically based on content */
-  }
-  
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .chart-container {
-    display: flex;
-    align-items: flex-start; /* Align items at the top */
-    justify-content: space-between; /* Space out items horizontally */
-  }
-  
-  .pie-chart {
-    flex: 2; /* Allow more space for the pie chart */
-    display: flex;
-    align-items: center; /* Center the chart vertically */
-  }
-  
-  .legend {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px; /* Space between the pie chart and legend */
-    align-items: flex-start; /* Align items at the start */
-    margin-top: 60px;
-  }
-  
-  .legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Space between legend items */
-  }
-  
-  .legend-color {
-    width: 20px; /* Width of the colored square */
-    height: 20px; /* Height of the colored square */
-    margin-right: 10px; /* Space between color square and text */
-  }
-  
-  .legend-text {
-    font-size: 14px;
-    color: #333;
-  }
-  
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 90%; /* More responsive width */
+  max-width: 600px; /* Cap width to maintain a reasonable size */
+  margin: 0 auto; /* Center the card */
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pie-chart {
+  width: 100%; /* Ensures pie chart scales with card */
+  max-width: 400px; /* Optional: Set a max width for large screens */
+}
+
+.legend {
+  display: flex;
+  flex-direction: column; /* Stack legend items vertically */
+  align-items: flex-start; /* Align items to the start */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between the color box and text */
+  margin-bottom: 10px; /* Space between legend items */
+  /* margin-left: 270px; */
+  /* margin-top: -110px; */
+}
+
+.legend-color {
+  width: 20px; /* Width of the colored square */
+  height: 20px; /* Height of the colored square */
+  /* margin-left: 80px; */
+}
+
+.legend-text {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  /* margin-left: 160px; */
+}

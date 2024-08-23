@@ -1,39 +1,38 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './ImageRisk.css'; // Import the CSS for styling
-
-const data = [
-  { name: 'Critical', value: 9, color: '#8B4513' }, // Brown
-  { name: 'High', value: 3, color: '#f44336' }, // Red
-  { name: 'Mild', value: 4, color: '#FF9800' }, // Orange
-  { name: 'Medium', value: 2, color: '#FFEB3B' }, // Yellow
-  { name: 'Low', value: 1, color: '#9E9E9E' }, // Grey
-];
 
 const ImageRisk = () => {
   return (
-    <div className="image-risk">
-      <h3 className="image-risk-heading">Image Risk Assessment</h3>
-      <p className="total-vulnerabilities">1490 Total Vulnerabilities</p>
-      <div className="chart-container">
-        <LineChart
-          width={600}
-          height={300}
-          data={data}
-          margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
+    <div className="card">
+      <div className="image-risk">
+        <h3 className="image-risk-heading">Image Risk Assessment</h3>
+        <p className="total-vulnerabilities">
+          <span className='total'>1490</span> Total Vulnerabilities
+        </p>
+        <div className="horizontal-line-container">
+  <div className="horizontal-line">
+    <div className="segment critical"></div>
+    <div className="segment high"></div>
+    <div className="segment medium"></div>
+    <div className="segment mild"></div>
+    <div className="segment low"></div>
+    <div className="marker critical">
+      <div className="color-box"></div>Critical (9)
+    </div>
+    <div className="marker high">
+      <div className="color-box"></div>High (150)
+    </div>
+    <div className="marker medium">
+      <div className="color-box"></div>Medium (840)
+    </div>
+    <div className="marker mild">
+      <div className="color-box"></div>Mild (407)
+    </div>
+    <div className="marker low">
+      <div className="color-box"></div>Low (64)
+    </div>
+  </div>
+</div>
       </div>
     </div>
   );

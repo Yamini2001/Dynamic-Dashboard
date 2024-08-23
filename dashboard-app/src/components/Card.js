@@ -23,8 +23,8 @@ const PieChartWithCenterLabel = () => {
             <PieChart>
               <Pie
                 data={data}
-                innerRadius={70} // Adjust innerRadius for hollow effect
-                outerRadius={90} // Adjust outerRadius to fit the chart in the card
+                innerRadius="50%" // Use percentage for responsiveness
+                outerRadius="80%" // Use percentage for responsiveness
                 startAngle={90} // Start angle to rotate the chart
                 endAngle={450} // End angle to rotate the chart (450 = 90 degrees + 360 degrees)
                 paddingAngle={0.5}
@@ -43,12 +43,12 @@ const PieChartWithCenterLabel = () => {
         </div>
         <div className="legend">
           <div className="legend-item">
-            <div className="legend-color" style={{ backgroundColor: COLORS[0] }}></div>
-            <div className="legend-text">Connected (2)</div>
+            <div className="legend-color" style={{ backgroundColor: COLORS[0]}}></div>
+            <div className="legend-text" style={{marginTop:-230, marginLeft:320}}>Connected (2)</div>
           </div>
           <div className="legend-item">
             <div className="legend-color" style={{ backgroundColor: COLORS[1] }}></div>
-            <div className="legend-text">Not Connected (2)</div>
+            <div className="legend-text" style={{marginTop:-230,marginLeft:320}}>Not Connected (2)</div>
           </div>
         </div>
       </div>

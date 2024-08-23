@@ -1,8 +1,19 @@
 import React from 'react';
+import './WidgetModal.css';
 
-const WidgetModal = ({ isOpen, onClose, onAddWidget, widgetOptions }) => {
-  const handleAddWidgets = (widgetName) => {
-    onAddWidget(widgetName);
+const WidgetModal = ({ isOpen, onClose, onConfirm, widgetOptions }) => {
+  const [selectedWidgets, setSelectedWidgets] = React.useState([]);
+
+  const handleCheckboxChange = (widgetName) => {
+    setSelectedWidgets((prevSelected) =>
+      prevSelected.includes(widgetName)
+        ? prevSelected.filter((item) => item !== widgetName)
+        : [...prevSelected, widgetName]
+    );
+  };
+
+  const handleConfirm = () => {
+    onConfirm(selectedWidgets);
     onClose();
   };
 
@@ -10,15 +21,24 @@ const WidgetModal = ({ isOpen, onClose, onAddWidget, widgetOptions }) => {
     isOpen && (
       <div className="modal-overlay">
         <div className="modal">
-          <h3>Select Widgets</h3>
+          <h3>Personalize your dashboard by adding the following widgets:</h3>
           <div className="widget-options">
             {widgetOptions.map(option => (
-              <button key={option} onClick={() => handleAddWidgets(option)}>
-                {option}
-              </button>
+              <div key={option} className="widget-option">
+                <input
+                  type="checkbox"
+                  id={option}
+                  value={option}
+                  onChange={() => handleCheckboxChange(option)}
+                />
+                <label htmlFor={option}>{option}</label>
+              </div>
             ))}
           </div>
-          <button onClick={onClose}>Cancel</button>
+          <div className="modal-buttons">
+            <button onClick={onClose} className="cancel-btn">Cancel</button>
+            <button onClick={handleConfirm} className="confirm-btn">Confirm</button>
+          </div>
         </div>
       </div>
     )
