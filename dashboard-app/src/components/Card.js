@@ -10,45 +10,39 @@ const data = [
 
 const COLORS = ['#0033cc', '#99ccff']; // Blue and light blue
 
-const PieChartWithCenterLabel = () => {
-  // Compute the total value for the center label
-  const total = data.reduce((sum, entry) => sum + entry.value, 0);
-
+const CloudAccountsCard = () => {
   return (
     <div className="card">
       <h3 className="card-title">Cloud Accounts</h3>
       <div className="chart-container">
         <div className="pie-chart">
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width={200} height={200}>
             <PieChart>
               <Pie
                 data={data}
-                innerRadius="50%" // Use percentage for responsiveness
-                outerRadius="80%" // Use percentage for responsiveness
-                startAngle={90} // Start angle to rotate the chart
-                endAngle={450} // End angle to rotate the chart (450 = 90 degrees + 360 degrees)
+                innerRadius={70}
+                outerRadius={90}
+                startAngle={90}
+                endAngle={450}
                 paddingAngle={0.5}
                 dataKey="value"
               >
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index]} />
                 ))}
-                <Label
-                  content={<CustomLabel />}
-                  position="center"
-                />
+                <Label content={<CustomLabel />} position="center" />
               </Pie>
             </PieChart>
           </ResponsiveContainer>
         </div>
         <div className="legend">
           <div className="legend-item">
-            <div className="legend-color" style={{ backgroundColor: COLORS[0]}}></div>
-            <div className="legend-text" style={{marginTop:-230, marginLeft:320}}>Connected (2)</div>
+            <div className="legend-color" style={{ backgroundColor: COLORS[0] }}></div>
+            <div className="legend-text">Connected (2)</div>
           </div>
           <div className="legend-item">
             <div className="legend-color" style={{ backgroundColor: COLORS[1] }}></div>
-            <div className="legend-text" style={{marginTop:-230,marginLeft:320}}>Not Connected (2)</div>
+            <div className="legend-text">Not Connected (2)</div>
           </div>
         </div>
       </div>
@@ -62,7 +56,7 @@ const CustomLabel = ({ viewBox }) => {
     <g>
       <text
         x={cx}
-        y={cy - 10} // Adjust vertical position if needed
+        y={cy - 10}
         textAnchor="middle"
         dominantBaseline="middle"
         style={{ fontSize: '16px', fontWeight: 'bold', fill: '#333' }}
@@ -71,7 +65,7 @@ const CustomLabel = ({ viewBox }) => {
       </text>
       <text
         x={cx}
-        y={cy + 10} // Adjust vertical position if needed
+        y={cy + 10}
         textAnchor="middle"
         dominantBaseline="middle"
         style={{ fontSize: '16px', fontWeight: 'bold', fill: '#333' }}
@@ -82,4 +76,4 @@ const CustomLabel = ({ viewBox }) => {
   );
 };
 
-export default PieChartWithCenterLabel;
+export default CloudAccountsCard;

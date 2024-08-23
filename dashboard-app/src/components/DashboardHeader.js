@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DashboardHeader.css';
 import { FaRedo, FaEllipsisV, FaClock, FaChevronDown } from 'react-icons/fa';
-import { GoPlus } from "react-icons/go";
+import { GoPlus } from 'react-icons/go';
 import WidgetModal from './WidgetModal';
 import PieChartWithCenterLabel from './Card';
 import RiskAssessmentCard from './RiskAssessmentCard';
@@ -18,19 +18,19 @@ const DashboardHeader = () => {
   const [cspmWidgets, setCspmWidgets] = useState([
     <PieChartWithCenterLabel key="cloud-accounts" />,
     <RiskAssessmentCard key="risk-assessment" />,
-    <CardList key="Add Widget" />
+    <CardList key="add-widget-cspm" />
   ]);
 
   const [cwppWidgets, setCwppWidgets] = useState([
     <Alert key="namespace-alerts" />,
     <WorkloadAlerts key="workload-alerts" />,
-    <CardList key="Add Widget" />
+    <CardList key="add-widget-cwpp" />
   ]);
 
   const [imageWidgets, setImageWidgets] = useState([
     <ImageRisk key="image-vulnerability" />,
-    <SecurityScan key="security-scan" />, // Replace with the correct component if different
-    <CardList key="Add Widget" />
+    <SecurityScan key="security-scan" />,
+    <CardList key="add-widget-image" />
   ]);
 
   const handleOpenModal = () => {
@@ -42,14 +42,34 @@ const DashboardHeader = () => {
   };
 
   const handleConfirmWidgets = (selectedWidgets) => {
+    const newCspmWidgets = [...cspmWidgets];
+    const newCwppWidgets = [...cwppWidgets];
+    const newImageWidgets = [...imageWidgets];
+
     selectedWidgets.forEach(widgetName => {
-      if (widgetName === 'Cloud Accounts') setCspmWidgets([...cspmWidgets, <PieChartWithCenterLabel key="new-cloud-accounts" />]);
-      if (widgetName === 'Risk Assessment') setCspmWidgets([...cspmWidgets, <RiskAssessmentCard key="new-risk-assessment" />]);
-      if (widgetName === 'Top 5 Namespace Specific Alerts') setCwppWidgets([...cwppWidgets, <Alert key="new-namespace-alerts" />]);
-      if (widgetName === 'Workload Alerts') setCwppWidgets([...cwppWidgets, <WorkloadAlerts key="new-workload-alerts" />]);
-      if (widgetName === 'Image Vulnerability') setImageWidgets([...imageWidgets, <ImageRisk key="new-image-vulnerability" />]);
-      if (widgetName === 'Security Scan') setImageWidgets([...imageWidgets, <WorkloadAlerts key="new-security-scan" />]); // Replace with the correct component if different
+      if (widgetName === 'Cloud Accounts' && !cspmWidgets.some(widget => widget.key === 'new-cloud-accounts')) {
+        newCspmWidgets.push(<PieChartWithCenterLabel key="new-cloud-accounts" />);
+      }
+      if (widgetName === 'Risk Assessment' && !cspmWidgets.some(widget => widget.key === 'new-risk-assessment')) {
+        newCspmWidgets.push(<RiskAssessmentCard key="new-risk-assessment" />);
+      }
+      if (widgetName === 'Top 5 Namespace Specific Alerts' && !cwppWidgets.some(widget => widget.key === 'new-namespace-alerts')) {
+        newCwppWidgets.push(<Alert key="new-namespace-alerts" />);
+      }
+      if (widgetName === 'Workload Alerts' && !cwppWidgets.some(widget => widget.key === 'new-workload-alerts')) {
+        newCwppWidgets.push(<WorkloadAlerts key="new-workload-alerts" />);
+      }
+      if (widgetName === 'Image Vulnerability' && !imageWidgets.some(widget => widget.key === 'new-image-vulnerability')) {
+        newImageWidgets.push(<ImageRisk key="new-image-vulnerability" />);
+      }
+      if (widgetName === 'Security Scan' && !imageWidgets.some(widget => widget.key === 'new-security-scan')) {
+        newImageWidgets.push(<SecurityScan key="new-security-scan" />);
+      }
     });
+
+    setCspmWidgets(newCspmWidgets);
+    setCwppWidgets(newCwppWidgets);
+    setImageWidgets(newImageWidgets);
   };
 
   const widgetOptions = [
@@ -111,14 +131,12 @@ const DashboardHeader = () => {
       </div>
 
       {isModalOpen && (
-        <div className="app-bar">
-          <WidgetModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            onConfirm={handleConfirmWidgets}
-            widgetOptions={widgetOptions}
-          />
-        </div>
+        <WidgetModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          onConfirm={handleConfirmWidgets}
+          widgetOptions={widgetOptions}
+        />
       )}
     </div>
   );

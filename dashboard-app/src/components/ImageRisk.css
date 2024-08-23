@@ -1,118 +1,114 @@
+/* Container styling for the card */
 .card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 80%; /* Ensure card has enough width */
-  max-width: 800px; /* Optional: cap width to maintain a reasonable size */
-  margin: 0 auto; /* Center the card */
+  width: 400px; /* Width of the card */
+  margin: 20px auto; /* Center the card on the page */
+  padding: 20px; /* Padding inside the card */
+  border: 1px solid #ddd; /* Light border around the card */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.image-risk {
-  text-align: left;
-}
-
+/* Title for the image risk section */
 .image-risk-heading {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  text-align: left;
+  font-size: 18px; /* Font size for heading */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px; /* Space below heading */
+  text-align: center; /* Center-align the heading */
 }
 
+/* Total vulnerabilities count */
 .total-vulnerabilities {
-  margin-bottom: 20px;
+  font-size: 16px; /* Font size for total vulnerabilities text */
+  margin-bottom: 20px; /* Space below the text */
+  text-align: center; /* Center-align the text */
 }
 
+/* Emphasis on total vulnerabilities number */
 .total {
-  font-weight: bold;
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark text color */
 }
 
+/* Container for the horizontal line */
 .horizontal-line-container {
-  position: absolute;
-  width: 80%; /* Full width of the parent */
-  height: 50px; /* Adjust height as needed */
-  margin: 50px 0; /* Margin for spacing */
+  position: absolute; /* Relative positioning for containing markers */
+  margin-bottom: 20px; /* Space below the line */
+  margin-right:180px;
 }
 
+/* Horizontal line representing vulnerability distribution */
 .horizontal-line {
-  display: flex; /* Flexbox for horizontal alignment */
-  align-items: center; /* Center content vertically */
-  height: 20px; /* Line height */
-  border-radius: 10px; /* Rounded edges for the line */
-  width: 50%; 
-  /* background-color: #ccc;  */
-  overflow: hidden; /* No overflow */
-  position: absolute; /* Ensure relative positioning for absolute children */
+  display: flex; /* Flexbox layout for line segments */
+  height: 10px; /* Height of the line */
+  background-color: #e0e0e0; /* Light gray background color */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Clip children to fit inside the line */
 }
 
+/* Individual segments within the horizontal line */
 .segment {
-  height: 100%;
+  height: 100%; /* Full height of the line */
 }
 
+/* Colors for each segment */
 .critical {
-  background-color: #8B4513; /* Brown for Critical */
-  flex: 1;
+  width: 5%; /* Adjusted width for critical segment */
+  background-color: #f44336; /* Red for critical */
 }
 
 .high {
-  background-color: #f44336; /* Red for High */
-  flex: 3;
+  width: 15%; /* Adjusted width for high segment */
+  background-color: #ff9800; /* Orange for high */
 }
 
 .medium {
-  background-color: #FFEB3B; /* Yellow for Medium */
-  flex: 4;
+  width: 60%; /* Adjusted width for medium segment */
+  background-color: #ffeb3b; /* Yellow for medium */
 }
 
 .mild {
-  background-color: #FF9800; /* Orange for Mild */
-  flex: 3;
+  width: 15%; /* Adjusted width for mild segment */
+  background-color: #8bc34a; /* Light green for mild */
 }
 
 .low {
-  background-color: #9E9E9E; /* Grey for Low */
-  flex: 0.5;
+  width: 5%; /* Adjusted width for low segment */
+  background-color: #2196f3; /* Blue for low */
 }
 
+/* Marker elements for each segment */
 .marker {
-  position: absolute; /* Absolute to position markers correctly */
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  color: #000;
-  transform: translateX(-50%); /* Center the marker horizontally */
-  top: -25px; /* Adjust top positioning to ensure markers are above the line */
+  display: flex; /* Flexbox layout for marker items */
+  align-items: center; /* Center-align items vertically */
+  font-size: 14px; /* Font size for marker text */
+  margin-top: 10px; /* Space above each marker */
 }
 
+/* Marker color box */
 .color-box {
-  width: 12px;
-  height: 12px;
-  margin-right: 5px; /* Space between box and text */
-  background-color: currentColor; /* Use the marker color */
-  margin-top: 0; /* Reset margin */
+  width: 10px; /* Width of color box */
+  height: 10px; /* Height of color box */
+  margin-right: 5px; /* Space between color box and text */
+  border-radius: 2px; /* Rounded corners for color box */
 }
 
-.marker.critical {
-  left: 10%; /* Positioning critical marker */
-  color: #8B4513; /* Brown for Critical */
+.critical .color-box {
+  background-color: #f44336; /* Red color for critical */
 }
 
-.marker.high {
-  left: 30%; /* Positioning high marker */
-  color: #f44336; /* Red for High */
+.high .color-box {
+  background-color: #ff9800; /* Orange color for high */
 }
 
-.marker.medium {
-  left: 50%; /* Positioning medium marker */
-  color: #FFEB3B; /* Yellow for Medium */
+.medium .color-box {
+  background-color: #ffeb3b; /* Yellow color for medium */
 }
 
-.marker.mild {
-  left: 70%; /* Positioning mild marker */
-  color: #FF9800; /* Orange for Mild */
+.mild .color-box {
+  background-color: #8bc34a; /* Light green color for mild */
 }
 
-.marker.low {
-  left: 90%; /* Positioning low marker */
-  color: #9E9E9E; /* Grey for Low */
+.low .color-box {
+  background-color: #2196f3; /* Blue color for low */
 }

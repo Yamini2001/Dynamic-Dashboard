@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Card.css'; // Ensure you have the correct styling for cards
+// import './Card.css'; 
 import './CardList.css';
 
 const initialCards = [

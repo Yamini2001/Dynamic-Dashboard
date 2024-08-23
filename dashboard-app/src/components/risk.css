@@ -1,91 +1,85 @@
+/* Card container */
 .card {
-  background-color: #fff;
-  border: 1px solid #dcdcdc;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  max-width: 650px; /* Adjust the max-width as needed */
-  box-sizing: border-box;
-  margin: 0 auto; /* Center the card horizontally */
+  width: 300px; /* Set a width for the card */
+  height: 300px; /* Let the height adjust to fit the content */
+  border: 1px solid #ddd; /* A subtle border for visibility */
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A slight shadow for depth */
+  padding: 16px; /* Space around the content inside the card */
+  background-color: #fff; /* Background color for the card */
+  display: flex; /* Flexbox to align elements */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center content horizontally */
+  margin: 20px; /* Space around the card */
 }
 
+/* Card title */
 .card-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 16px; /* Space below the title */
+  font-size: 18px; /* Font size for the title */
+  font-weight: bold; /* Bold text */
   text-align: center; /* Center the title */
 }
 
+/* Container for content within the card */
 .content-container {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically by default */
-  align-items: center; /* Center content horizontally */
+  display: flex; /* Flexbox layout */
+  flex-direction: row; /* Row layout to place pie chart and legend side-by-side */
+  justify-content: space-between; /* Space between pie chart and legend */
+  align-items: center; /* Center content vertically */
 }
 
+/* Container for the pie chart */
 .chart-container {
-  width: 100%; /* Full width for the pie chart container */
-  max-width: 350px; /* Limit the width of the pie chart */
-  margin-bottom: 20px; /* Space below the chart */
+  width: 60%; /* Allocate width to pie chart container */
+  height: 210px; /* Set height */
+  display: flex; /* Flexbox for layout */
+  justify-content: center; /* Center the chart horizontally */
+  align-items: center; /* Center content vertically */
 }
 
+/* Container for square legend items */
 .square-container {
-  display: flex;
-  flex-direction: column; /* Stack legend items vertically */
-  gap: 10px; /* Space between each item */
-  align-items: flex-start; /* Align items to the start */
+  width: 35%; /* Allocate width to legend container */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout for legend items */
+  justify-content: center; /* Center items vertically */
 }
 
+/* Individual square items */
 .square {
-  display: flex;
-  align-items: center; /* Center the items vertically */
-  gap: 10px; /* Space between the square box and the text */
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 10px; /* Space below each item */
 }
 
+/* Square color box */
 .square-box {
-  width: 20px; /* Width of the colored square */
-  height: 20px; /* Height of the colored square */
-  display: inline-block; /* Ensure the box stays inline with the text */
+  width: 20px; /* Width of the square */
+  height: 20px; /* Height of the square */
+  margin-right: 8px; /* Space between square and text */
+  border-radius: 4px; /* Rounded corners */
 }
 
-.square.red .square-box {
-  background-color: #f44336; /* Red */
-}
-
-.square.yellow .square-box {
-  background-color: #ffeb3b; /* Yellow */
-}
-
-.square.light-gray .square-box {
-  background-color: #f5f5f5; /* Light Gray */
-}
-
-.square.green .square-box {
-  background-color: #4caf50; /* Green */
-}
-
+/* Text next to the square */
 .square-text {
-  font-size: 14px;
-  color: #333;
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  font-size: 14px; /* Font size for text */
+  color: #333; /* Text color */
 }
 
-/* Media query for larger screens */
-@media (min-width: 768px) {
-  .content-container {
-    flex-direction: row; /* Align chart and legend horizontally on larger screens */
-    justify-content: space-between; /* Space between chart and legend */
-    align-items: flex-start; /* Align items to the top */
-  }
+/* Color-specific styles */
+.red .square-box {
+  background-color: #f44336; /* Red color for "Failed" */
+}
 
-  .chart-container {
-    max-width: 50%; /* Adjust width for pie chart container on larger screens */
-    margin-right: 30px; /* Space between chart and legend */
-  }
+.yellow .square-box {
+  background-color: #ffeb3b; /* Yellow color for "Warning" */
+}
 
-  .square-container {
-    flex-direction: column; /* Stack legend items vertically */
-  }
+.light-gray .square-box {
+  background-color: #bababa; /* Light gray for "Not Available" */
+}
+
+.green .square-box {
+  background-color: #4caf50; /* Green color for "Passed" */
 }
